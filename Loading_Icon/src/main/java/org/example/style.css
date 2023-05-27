@@ -1,0 +1,72 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.Spinner {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* overflow: hidden;*/
+    animation: text-color 2s ease-in-out infinite;
+}
+
+.spin-sector {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 20px solid transparent;
+    mix-blend-mode: overlay;
+    animation: rotate 1.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.spin-sector-green {
+    border-left-color: lightgreen;
+    --duration: 1.5s;
+    --timing: ease-in-out;
+}
+
+.spin-sector-blue {
+    border-top-color: lightblue;
+    --duration: 2s;
+    --timing: ease-in;
+
+}
+
+.spin-sector-red {
+    border-right-color: lightcoral;
+    --duration: 2.5s;
+    --timing: ease-out;
+
+}
+
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes text-color {
+    0% , 100% {
+        color: rgba(0,0,0,1);
+    }
+
+    25%, 75% {
+        color: rgba(0,0,0,.5);
+    }
+
+    50% {
+        color: rgba(0,0,0,.1);
+    }
+}
+
