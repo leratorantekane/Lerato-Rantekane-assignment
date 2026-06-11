@@ -10,4 +10,5 @@ venv/
 .env/
 .idea/
 .vscode/
-
+photorec.se2
+venv/
